@@ -1,0 +1,82 @@
+/* assets/css/liquid-navbar.css */
+
+/* Aplicando o efeito Liquid Glass ao cabeçalho principal */
+.main-header {
+    /* Assegura que o header flutue e ocupe a largura total */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Garante que ele fique acima de outros conteúdos */
+
+
+    /* Propriedades Liquid Glass */
+    background: rgba(0, 0, 0, 0.4); /* Fundo translúcido: preto com 40% de opacidade */
+    backdrop-filter: blur(15px) saturate(180%) brightness(120%); /* Efeito principal de desfoque e brilho */
+    -webkit-backdrop-filter: blur(15px) saturate(180%) brightness(120%); /* Compatibilidade com Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Borda inferior sutil, quase invisível */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra para levantar o elemento */
+    transition: background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Transições suaves */
+}
+
+/* Reflexo superior sutil no header, para o toque de "luz" */
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px; /* Linha muito fina */
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3) 20%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0.3) 80%,
+        transparent
+    );
+    opacity: 0.7; /* Opacidade para ser discreto */
+}
+
+/* Ajustes para a legibilidade do texto e logo sobre o vidro */
+
+
+.main-header .logo a {
+    color: var(--light-text-color);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    transition: color var(--transition-speed) ease;
+    
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+/* Ajustes ESPECÍFICOS para os ITENS DO MENU DE NAVEGAÇÃO */
+.main-header .main-nav ul li a {
+    color: var(--light-text-color);
+    
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.8), 0 0 2px rgba(0, 0, 0, 0.5); 
+    
+    transition: color var(--transition-speed) ease;
+    
+    font-weight: 500;
+    font-size: 16px;
+    letter-spacing: normal;
+}
+
+.main-header .main-nav ul li a:hover {
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Ajuste para a imagem da logo, se necessário, para que ela "brilhe" um pouco */
+.main-header .logo-img {
+    filter: brightness(0) invert(1);
+}
+
+/* Adaptações para responsividade, se necessário sobrepor as do responsive.css */
+/* @media (max-width: 768px) {
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+} */

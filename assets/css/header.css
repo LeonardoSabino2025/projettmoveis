@@ -1,0 +1,66 @@
+/* css/header.css */
+
+.main-header .logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main-header .logo-img {
+    max-height: 40px;
+    width: auto;
+    height: auto;    
+}
+
+.main-header {
+    background-color: #fff;
+    padding: var(--spacing-md) 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo a {
+    font-family: var(--heading-font);
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -1px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.main-nav ul li a {
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed) ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+    width: 100%;
+}

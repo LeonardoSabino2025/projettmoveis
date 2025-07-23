@@ -1,0 +1,184 @@
+/* css/base.css */
+
+:root {
+    /* Cores - Adapte estas cores para a paleta da Projett Móveis */
+    --primary-color: #333; /* Cor principal para textos e elementos escuros */
+    --secondary-color: #f0f0f0; /* Cor secundária, para fundos claros ou detalhes */
+    --accent-color: #f63440; /* Cor de destaque, para botões, links, ícones */
+    --text-color: #4C4C4C; /* Cor padrão para textos de corpo */
+    --light-text-color:#FFFFFF; /* Cor de texto para fundos escuros */
+    --border-color: #999999; /* Cor para bordas e divisores */
+
+    /* Fontes - Escolha fontes que transmitam elegância e sofisticação */
+    --heading-font: 'Montserrat', sans-serif; /* Para títulos */
+    --body-font: 'Montserrat', sans-serif;   /* Para textos de corpo */
+
+    /* Espaçamentos e Sombras */
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --spacing-lg: 40px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Sombra suave para elementos */
+    --transition-speed: 0.3s; /* Velocidade padrão para transições */
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Anima a rolagem para âncoras */
+}
+
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fff; /* Fundo branco para a página */
+}
+
+/* Removendo underline de links e definindo cor padrão */
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--accent-color);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+h2 {
+    font-family: var(--heading-font);
+    color: var(--text-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Layout Geral e Container */
+.container {
+    max-width: 1200px; /* Largura máxima do conteúdo */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 0 var(--spacing-md); /* Espaçamento interno nas laterais */
+}
+
+/* Botões genéricos */
+.btn {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    padding: 12px 25px;
+    border-radius: 5px;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: darken(var(--accent-color), 10%);
+    transform: translateY(-2px);
+}
+
+.btn-more {
+    display: inline-block;
+    color: var(--accent-color);
+    font-weight: 600;
+    padding: 5px 0;
+    position: relative;
+    transition: color var(--transition-speed) ease;
+}
+
+.btn-more::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed) ease;
+}
+
+.btn-more:hover::after {
+    width: 100%;
+}
+
+.btn-grid {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 8px 0;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-speed) ease;
+    margin-top: 10px;
+}
+
+.btn-grid:hover {
+    background-color: var(--accent-color);
+    color: var(--light-text-color);
+    border-color: var(--accent-color);
+}
+
+.whatsapp-float {
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);    
+    color: var(--light-text-color);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;    
+    z-index: 9999;
+    
+    /* ESTILOS ADICIONADOS PARA CONTROLAR A VISIBILIDADE E ANIMAÇÃO */
+    opacity: 0; /* Começa invisível */
+    pointer-events: none; /* Impede cliques quando invisível */
+    transform: translateY(20px); /* Inicia um pouco abaixo para animação de subida */
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Transição suave */
+}
+
+/* Classe para mostrar o botão quando o usuário rolar */
+.whatsapp-float.show-whatsapp {
+    opacity: 1; /* Torna visível */
+    pointer-events: auto; /* Permite cliques */
+    transform: translateY(0); /* Volta à posição normal */
+}
+.whatsapp-icon {
+    width: 100px;
+    height: 100px;
+
+/* Animações (Keyframes) - Podem ficar aqui, ou em um animations.css se ficarem complexas */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInScaleUp {
+    from { opacity: 0; transform: scale(0.95) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
