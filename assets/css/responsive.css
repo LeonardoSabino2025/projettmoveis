@@ -140,6 +140,59 @@
     }
 
 }
+
+ /* Regras para o menu hambúrguer */
+    .main-header .container {
+        flex-direction: row; /* Volta a alinhar horizontalmente */
+        justify-content: space-between;
+        align-items: center;
+        position: relative; /* Essencial para o posicionamento do botão */
+    }
+
+    .main-nav {
+        /* Posição do menu na tela mobile */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--primary-color);
+        z-index: 999;
+        
+        /* Oculta o menu por padrão, deslizando para fora da tela */
+        transform: translateX(100%);
+        transition: transform var(--transition-speed) ease-in-out;
+    }
+
+    .main-nav.active {
+        /* Quando a classe 'active' for adicionada, desliza o menu para a tela */
+        transform: translateX(0);
+    }
+    
+    .main-nav ul {
+        flex-direction: column; /* Coloca os itens do menu um abaixo do outro */
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        margin-top: 0;
+        gap: var(--spacing-lg); /* Aumenta o espaço entre os links */
+    }
+    
+    .hamburger-menu {
+        display: block; /* Mostra o botão hambúrguer */
+    }
+    
+    /* Animação do botão de hambúrguer */
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
 @media (max-width: 480px) {
     body {
         font-size: 15px;
@@ -172,13 +225,17 @@
     }
 
     .whatsapp-float {
-        width: 50px;
-        height: 50px;
-        bottom: 15px;
-        right: 15px;
+        
+        width: 100px;
+        height: 100px;
+        bottom: 5px;
+        right: 5px;        
     }
+    
+
     .whatsapp-icon {
-        width: 25px;
-        height: 25px;
-}
+        /* O ícone dentro do botão deve ser menor também */
+        width: 100px; /* Ajuste o tamanho do ícone */
+        height: 100px; /* Ajuste o tamanho do ícone */
+    }
 }

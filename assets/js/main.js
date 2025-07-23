@@ -1,9 +1,8 @@
 // assets/js/main.js
 
-import { initCarousel } from './carousel.js'; // Importa a função do carrossel
+import { initCarousel } from './carousel.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inicializa o carrossel quando o DOM estiver pronto
     initCarousel();
 
   // CÓDIGO PARA O ÍCONE ANIMADO DO WHATSAPP COM LOTTIE
@@ -11,34 +10,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (animationContainer) {
     lottie.loadAnimation({
-      container: animationContainer, // O elemento DOM que conterá a animação
-      renderer: 'svg', // Tipo de renderização: 'svg' é geralmente o melhor para qualidade
-      loop: true, // A animação vai repetir em loop
-      autoplay: true, // A animação vai começar automaticamente
-      path: 'assets/js/whatsapp.json', // Caminho para o seu arquivo JSON de animação
+      container: animationContainer,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      path: 'assets/js/whatsapp.json',
     });
   }
-    // CÓDIGO PARA CONTROLAR A VISIBILIDADE DO BOTÃO DO WHATSAPP NA ROLAGEM
+  // CÓDIGO PARA CONTROLAR A VISIBILIDADE DO BOTÃO DO WHATSAPP NA ROLAGEM
   const whatsappButton = document.querySelector('.whatsapp-float');
-  const heroSection = document.querySelector('.hero-section'); // Seleciona sua seção hero
+  const heroSection = document.querySelector('.hero-section');
 
   if (whatsappButton && heroSection) {
     const handleScroll = () => {
-      // Pega a altura da seção hero (pode ajustar o valor -100 para aparecer um pouco antes/depois)
+      
       const heroHeight = heroSection.offsetHeight; 
 
-      // Verifica se o usuário rolou a página além da altura da seção hero
-      if (window.scrollY > heroHeight - 100) { // O -100 faz com que ele apareça 100px antes do fim da hero
+      
+      if (window.scrollY > heroHeight - 100) {
         whatsappButton.classList.add('show-whatsapp');
       } else {
         whatsappButton.classList.remove('show-whatsapp');
       }
     };
-
-    // Adiciona o event listener para o evento de rolagem
     window.addEventListener('scroll', handleScroll);
-
-    // Chama a função uma vez no carregamento da página para verificar a posição inicial
     handleScroll();
   }
+  // NOVO: Lógica do menu hambúrguer
+    const hamburger = document.getElementById('hamburger-menu');
+    const navMenu = document.getElementById('main-nav');
+    const navLinks = navMenu.querySelectorAll('a'); // Seleciona todos os links do menu
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Opcional: Adicionar um listener para fechar o menu ao clicar em um link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+    }
 });
+

@@ -146,7 +146,7 @@ h2 {
     bottom: var(--spacing-md);
     right: var(--spacing-md);    
     color: var(--light-text-color);
-    border-radius: 50%;
+    border-radius: 0;
     width: 100px;
     height: 100px;
     display: flex;
@@ -156,21 +156,28 @@ h2 {
     z-index: 9999;
     
     /* ESTILOS ADICIONADOS PARA CONTROLAR A VISIBILIDADE E ANIMAÇÃO */
-    opacity: 0; /* Começa invisível */
-    pointer-events: none; /* Impede cliques quando invisível */
-    transform: translateY(20px); /* Inicia um pouco abaixo para animação de subida */
-    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Transição suave */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Classe para mostrar o botão quando o usuário rolar */
 .whatsapp-float.show-whatsapp {
-    opacity: 1; /* Torna visível */
-    pointer-events: auto; /* Permite cliques */
-    transform: translateY(0); /* Volta à posição normal */
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
 }
 .whatsapp-icon {
     width: 100px;
     height: 100px;
+}
+.whatsapp-float.hide-whatsapp {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transform: translateY(20px) !important;
+}
+    
 
 /* Animações (Keyframes) - Podem ficar aqui, ou em um animations.css se ficarem complexas */
 @keyframes fadeIn {
@@ -181,4 +188,27 @@ h2 {
 @keyframes fadeInScaleUp {
     from { opacity: 0; transform: scale(0.95) translateY(20px); }
     to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Estilos para o botão do menu hambúrguer (visível apenas em mobile) */
+.hamburger-menu {
+    display: none; /* Escondido por padrão */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    position: absolute; /* Para posicionar na parte superior direita do header */
+    top: 50%;
+    right: var(--spacing-md);
+    transform: translateY(-50%);
+    z-index: 1000; /* Garante que fique acima de outros elementos */
+}
+
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--light-text-color);
+    margin: 5px 0;
+    transition: all var(--transition-speed) ease-in-out;
 }
