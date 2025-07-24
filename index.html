@@ -585,7 +585,7 @@
     <script src="assets/js/liquid-navbar.js" type="module"></script>
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        fetch("about-us-section.html") // Caminho para o seu novo arquivo HTML
+        fetch("about-us-section.html")
           .then((response) => response.text())
           .then((html) => {
             document.getElementById("about-us-section-placeholder").innerHTML =
@@ -594,6 +594,12 @@
               document.getElementById("aboutUsVideo");
             if (videoInLoadedSection) {
               videoInLoadedSection.classList.add("active");
+              videoInLoadedSection.play().catch((error) => {
+                console.warn(
+                  "Vídeo não pode ser reproduzido automaticamente:",
+                  error
+                );
+              });
             }
           })
           .catch((error) =>
