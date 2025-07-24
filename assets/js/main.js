@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   // NOVO: Lógica do menu hambúrguer
     const hamburger = document.getElementById('hamburger-menu');
-    const navMenu = document.getElementById('main-nav');
+    const navMenu = document.querySelector('.main-nav');
     const navLinks = navMenu.querySelectorAll('a'); // Seleciona todos os links do menu
 
     if (hamburger && navMenu) {

@@ -29,17 +29,17 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Anima a rolagem para âncoras */
+    scroll-behavior: smooth;
 }
 
 body {
     font-family: var(--body-font);
     line-height: 1.6;
     color: var(--text-color);
-    background-color: #fff; /* Fundo branco para a página */
+    background-color: #fff;
 }
 
-/* Removendo underline de links e definindo cor padrão */
+
 a {
     text-decoration: none;
     color: var(--primary-color);
@@ -74,9 +74,9 @@ h2 {
 
 /* Layout Geral e Container */
 .container {
-    max-width: 1200px; /* Largura máxima do conteúdo */
-    margin: 0 auto; /* Centraliza o container na página */
-    padding: 0 var(--spacing-md); /* Espaçamento interno nas laterais */
+    max-width: 1200px
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }
 
 /* Botões genéricos */
@@ -162,7 +162,26 @@ h2 {
     transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Classe para mostrar o botão quando o usuário rolar */
+.main-nav {
+    /* Garante que o menu principal seja visível e em linha no desktop */
+    display: flex; 
+    align-items: center;
+    /* Adicione quaisquer outras propriedades padrão do main-nav aqui, se houver */
+}
+
+.main-nav ul {
+    display: flex; /* Alinha os itens do menu horizontalmente no desktop */
+    gap: var(--spacing-md);
+    list-style: none;
+    margin: 0;
+}
+
+/* O botão do hambúrguer deve estar escondido por padrão em desktop */
+.hamburger-menu {
+    display: none; 
+}
+
+/* Classe para mostrar o botão do Whatsapp quando o usuário rolar */
 .whatsapp-float.show-whatsapp {
     opacity: 1;
     pointer-events: auto;

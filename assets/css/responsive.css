@@ -43,21 +43,107 @@
 
 @media (max-width: 768px) {
     .main-header .container {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        gap: var(--spacing-sm);
+        position: relative;
     }
 
-    .main-nav ul {
-        flex-wrap: wrap;
+    /* Mostrar o botão hambúrguer */
+    .hamburger-menu {
+        display: block;
+        z-index: 1001;
+    }
+
+    /* MENU MOBILE - OVERLAY COMPLETO */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--primary-color);
+        z-index: 1000;
+        transform: translateX(100%);
+        transition: transform var(--transition-speed) ease-in-out;
+        
+        /* IMPORTANTE: Garantir que o conteúdo seja visível */
+        display: none;
         justify-content: center;
-        margin-top: var(--spacing-sm);
+        align-items: center;
     }
 
+    .main-nav.active {
+        display: flex; /* TORNA O MENU VISÍVEL E UM FLEX CONTAINER QUANDO ATIVO */
+        position: fixed; /* Fixa o menu na tela */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh; /* Altura total da viewport */
+        background-color: var(--primary-color); /* Fundo do menu (cor escura) */
+        z-index: 999; /* Fica acima da página, mas abaixo do hambúrguer */
+        transform: translateX(0); /* Desliza o menu para a vista */
+        transition: transform 0.3s ease-in-out; /* Transição suave */
+        flex-direction: column; /* Organiza os itens verticalmente */
+        justify-content: center; /* Centraliza o conteúdo verticalmente */
+        align-items: center; /* Centraliza o conteúdo horizontalmente */
+    }
+    
+    /* LINKS DO MENU - CENTRALIZADOS E VISÍVEIS */
+    .main-nav ul {
+        flex-direction: column; /* Garante que os links fiquem em coluna */
+        height: 100%; /* Ocupa a altura disponível do nav */
+        justify-content: center; /* Centraliza os links na coluna */
+        align-items: center; /* Centraliza os links horizontalmente */
+        margin-top: 0;
+        padding: 0; /* Remova padding padrão de ul */
+        gap: var(--spacing-lg); /* Espaço entre os links */
+        width: 100%; /* Garante que a UL ocupe a largura total do NAV */
+    }
+
+    .main-nav ul li {
+        opacity: 1 !important; /* Garantir visibilidade */
+        visibility: visible !important;
+        width: 100%; /* Faz o item da lista ocupar toda a largura */
+        text-align: center; /* Centraliza o texto dentro do li */
+    }
+
+    
+    
+    /* ESTILO DOS LINKS NO MENU MOBILE */
     .main-nav ul li a {
-        padding: 5px 10px;
+        color: var(--light-text-color) !important; /* Texto branco */
+        font-size: 1.5rem !important;
+        font-weight: 600 !important;
+        text-decoration: none;
+        padding: 15px 30px;
+        display: block;
+        text-align: center;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        
+        /* Remover efeitos que podem esconder o texto */
+        text-shadow: none !important;
+        opacity: 1 !important;
     }
 
+    .main-nav ul li a:hover {
+        background-color: var(--accent-color);
+        color: var(--light-text-color) !important;
+    }
+
+    /* ANIMAÇÃO DO BOTÃO HAMBÚRGUER */
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Resto das regras responsivas existentes... */
     .hero-section {
         height: 60vh;
     }
@@ -86,16 +172,6 @@
         font-size: 2.2em;
     }
 
-    .cta-newsletter-section form {
-        flex-direction: column;
-    }
-
-    .cta-newsletter-section input[type="email"],
-    .cta-newsletter-section button.btn {
-        width: 100%;
-        margin-bottom: var(--spacing-sm);
-    }
-
     .footer-col {
         min-width: 100%;
         text-align: center;
@@ -110,88 +186,43 @@
         display: flex;
         justify-content: center;
     }
+
     .projects-section .container {
         flex-direction: column;
     }
+
     .projects-section .blog-post {
         flex: 1 1 100%;
         max-width: 100%;
     }
-    /* Ajustes para os itens de depoimento em telas menores */
+
     .testimonial-item {
-        flex-direction: column; /* Em colunas para telas menores */
-        min-height: auto; /* Remove altura mínima fixa para flexibilidade */
+        flex-direction: column;
+        min-height: auto;
     }
+
     .testimonial-item img,
     .testimonial-item .testimonial-content {
-        width: 100%; /* Ocupam toda a largura */
+        width: 100%;
         height: auto;
         min-height: auto;
-        text-align: left; /* Garante alinhamento padrão */
+        text-align: left;
     }
-    .testimonial-item:nth-of-type(even) { /* Remove inversão em telas menores */
+
+    .testimonial-item:nth-of-type(even) {
         flex-direction: column;
     }
+
     .testimonial-item:nth-of-type(even) .testimonial-content {
-        text-align: left; /* Garante alinhamento padrão */
-    }
-    .projects-cards-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas menores */
+        text-align: left;
     }
 
+    .projects-cards-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
- /* Regras para o menu hambúrguer */
-    .main-header .container {
-        flex-direction: row; /* Volta a alinhar horizontalmente */
-        justify-content: space-between;
-        align-items: center;
-        position: relative; /* Essencial para o posicionamento do botão */
-    }
-
-    .main-nav {
-        /* Posição do menu na tela mobile */
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: var(--primary-color);
-        z-index: 999;
-        
-        /* Oculta o menu por padrão, deslizando para fora da tela */
-        transform: translateX(100%);
-        transition: transform var(--transition-speed) ease-in-out;
-    }
-
-    .main-nav.active {
-        /* Quando a classe 'active' for adicionada, desliza o menu para a tela */
-        transform: translateX(0);
-    }
-    
-    .main-nav ul {
-        flex-direction: column; /* Coloca os itens do menu um abaixo do outro */
-        justify-content: center;
-        align-items: center;
-        height: 100%;
-        margin-top: 0;
-        gap: var(--spacing-lg); /* Aumenta o espaço entre os links */
-    }
-    
-    .hamburger-menu {
-        display: block; /* Mostra o botão hambúrguer */
-    }
-    
-    /* Animação do botão de hambúrguer */
-    .hamburger-menu.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    .hamburger-menu.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-    }
-    .hamburger-menu.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-    }
+ 
 
 @media (max-width: 480px) {
     body {
