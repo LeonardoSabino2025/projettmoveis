@@ -221,22 +221,25 @@
         grid-template-columns: 1fr;
     }
 
-        .about-us-video-section {
-        height: auto;
-        min-height: 500px;
-        padding: var(--spacing-md) 0;
-    }
-
-    .about-us-video-section h2 {
-        font-size: 2em;
-    }
-
-    .about-us-video-section p {
-        font-size: 0.95em;
+   .about-us-video-section {
+        min-height: auto;
+        padding: var(--spacing-md) 0;        
+        align-items: flex-start; 
     }
 
     .about-us-video-section .about-us-content {
-        padding: var(--spacing-sm);
+        height: 100%;
+        width: 80%;
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin: var(--spacing-md) auto;
+    }
+
+    .about-us-video-section .about-us-content h2 {
+        font-size: 2rem;
+    }
+
+    .about-us-video-section .about-us-content p {
+        font-size: 0.95rem;
     }
 }
 
@@ -257,7 +260,7 @@
     }
 
     .hero-content h1 {
-        font-size: 1.8em; /* Ajuste para telas muito pequenas */
+        font-size: 1.8em;
     }
 
     .hero-content p {
@@ -282,9 +285,26 @@
     }
     
 
-    .whatsapp-icon {
-        /* O ícone dentro do botão deve ser menor também */
-        width: 100px; /* Ajuste o tamanho do ícone */
-        height: 100px; /* Ajuste o tamanho do ícone */
+    .whatsapp-icon {        
+        width: 100px;
+        height: 100px;
+    }
+    .about-us-video-section {
+        padding: var(--spacing-sm) 0;
+    }
+
+    .about-us-video-section .about-us-content {
+        height: 100%;
+        width: 80%;
+        padding: var(--spacing-md) var(--spacing-sm);
+        margin: var(--spacing-sm) auto;
+    }
+
+    .about-us-video-section .about-us-content h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-us-video-section .about-us-content p {
+        font-size: 0.85rem;
     }
 }

@@ -84,10 +84,24 @@
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: var(--spacing-md);
-    margin-top: var(--spacing-lg);
+    background-color: #999999; /* Cor de fundo solicitada */
+    padding: var(--spacing-sm) 0;
     text-align: center;
-    font-size: 0.85em;
-    opacity: 0.8;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Manter borda se desejar */
+    color: #333333; /* Cor do texto padrão para esta seção */
+}
+
+.footer-bottom p {
+    color: #333333; /* Garante que o texto dentro do parágrafo seja dessa cor */
+}
+
+.footer-bottom a {
+    color: #333333; /* Garante que os links também sejam dessa cor */
+    /* Mantenha outros estilos de link, como text-decoration ou hover, se houver */
+    text-decoration: none; /* Exemplo: remover sublinhado */
+}
+
+/* Opcional: Para o link "Leonardo Sabino" ficar um pouco diferente, se quiser */
+.footer-bottom a:hover {
+    color: var(--accent-color); /* Exemplo: muda para a cor de destaque ao passar o mouse */
 }
