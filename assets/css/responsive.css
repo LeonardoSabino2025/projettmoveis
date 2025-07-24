@@ -241,6 +241,10 @@
     .about-us-video-section .about-us-content p {
         font-size: 0.95rem;
     }
+    
+    .carousel-nav-container {
+        display: none;
+    }
 }
 
  
