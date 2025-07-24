@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Esconde controles nativos para evitar duplicação
       video.removeAttribute('controls');
-      video.setAttribute('playsinline', ''); // evita fullscreen automático no iOS
-      video.setAttribute('muted', ''); // Mute para autoplay em alguns navegadores
+      video.setAttribute('playsinline', '');
+      video.setAttribute('muted', '');
   });
     
 });
