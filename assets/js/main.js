@@ -1,6 +1,7 @@
 // assets/js/main.js
 
 import { initCarousel } from './carousel.js';
+import './about-us-video.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initCarousel();
@@ -54,6 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 navMenu.classList.remove('active');
             });
         });
-    }
-});
+    } 
+  });
 

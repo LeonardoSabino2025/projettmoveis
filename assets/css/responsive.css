@@ -220,6 +220,24 @@
     .projects-cards-grid {
         grid-template-columns: 1fr;
     }
+
+        .about-us-video-section {
+        height: auto;
+        min-height: 500px;
+        padding: var(--spacing-md) 0;
+    }
+
+    .about-us-video-section h2 {
+        font-size: 2em;
+    }
+
+    .about-us-video-section p {
+        font-size: 0.95em;
+    }
+
+    .about-us-video-section .about-us-content {
+        padding: var(--spacing-sm);
+    }
 }
 
  

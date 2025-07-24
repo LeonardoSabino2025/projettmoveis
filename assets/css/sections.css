@@ -246,3 +246,93 @@
     font-weight: 600;
     color: var(--accent-color);
 }
+
+/* Seção Sobre Nós com vídeo de fundo */
+.about-us-video-section {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Ajuste a altura conforme necessário */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text-color); /* Texto branco para contraste */
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+}
+
+.about-us-video-section .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.about-us-video-section .video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: grayscale(100%); /* Vídeos em preto e branco */
+    display: none; /* Esconde todos os vídeos por padrão */
+    opacity: 0; /* Esconde todos os vídeos por padrão */
+    transition: opacity 1s ease-in-out;
+}
+
+.about-us-video-section .video-background video.active {
+    display: block; /* Mostra o vídeo ativo */
+    opacity: 1; /* Mostra o vídeo ativo */
+}
+
+.about-us-video-section .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1); /* Preto com 70% de opacidade */
+    backdrop-filter: blur(8px); /* Efeito de desfoque */
+    -webkit-backdrop-filter: blur(8px); /* Para compatibilidade com Safari */
+    /* mix-blend-mode: multiply; /* Modo de mesclagem para interagir com o vídeo */
+    z-index: 1;
+}
+
+.about-us-video-section .about-us-content {
+    position: relative;
+    z-index: 2; /* Garante que o conteúdo fique acima do overlay */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo sutil para o texto */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.about-us-video-section .about-us-content h2,
+.about-us-video-section .about-us-content p {
+    color: var(--light-text-color);
+    opacity: 1!important;
+}
+
+.about-us-video-section h2 {
+    font-family: var(--heading-font);
+    font-size: 2.8em;
+    margin-bottom: var(--spacing-md);
+    /* Remova 'color: var(--light-text-color);' daqui se a regra acima já cobrir isso */
+}
+
+.about-us-video-section p {
+    font-family: var(--body-font);
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+    /* Remova 'color: var(--light-text-color);' daqui se a regra acima já cobrir isso */
+}
