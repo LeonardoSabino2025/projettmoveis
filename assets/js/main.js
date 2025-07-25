@@ -1,43 +1,18 @@
 // assets/js/main.js
 
 import { initCarousel } from './carousel.js';
-import './about-us-video.js';
+import { initWhatsappLogic } from './whatsapp-animation.js'; 
+import { initVideoPlayers } from './play_video.js';
+import { initLiquidNavBar } from './liquid-navbar.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initCarousel();
+    initWhatsappLogic();
+    initVideoPlayers();
+    initLiquidNavBar();
 
-  // CÓDIGO PARA O ÍCONE ANIMADO DO WHATSAPP COM LOTTIE
-  const animationContainer = document.getElementById('whatsapp-animation-container');
-
-  if (animationContainer) {
-    lottie.loadAnimation({
-      container: animationContainer,
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'assets/js/whatsapp.json',
-    });
-  }
-  // CÓDIGO PARA CONTROLAR A VISIBILIDADE DO BOTÃO DO WHATSAPP NA ROLAGEM
-  const whatsappButton = document.querySelector('.whatsapp-float');
-  const heroSection = document.querySelector('.hero-section');
-
-  if (whatsappButton && heroSection) {
-    const handleScroll = () => {
-      
-      const heroHeight = heroSection.offsetHeight; 
-
-      
-      if (window.scrollY > heroHeight - 100) {
-        whatsappButton.classList.add('show-whatsapp');
-      } else {
-        whatsappButton.classList.remove('show-whatsapp');
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    handleScroll();
-  }
-  // NOVO: Lógica do menu hambúrguer
+  
+  // Lógica do menu hambúrguer
     const hamburger = document.getElementById('hamburger-menu');
     const navMenu = document.querySelector('.main-nav');
     const navLinks = navMenu.querySelectorAll('a'); // Seleciona todos os links do menu
@@ -48,12 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.toggle('active');
         });
 
-        // Opcional: Adicionar um listener para fechar o menu ao clicar em um link
+        // Adiciona um listener para fechar o menu ao clicar em um link
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             });
         });
-    } 
-  });
+    }
+
+    // Código para carregamento da seção "Sobre Nós" (mantido)
+    fetch("about-us-section.html")
+      .then((response) => response.text())
+      .then((html) => {
+        document.getElementById("about-us-section-placeholder").innerHTML =
+          html;
+        const videoInLoadedSection =
+          document.getElementById("aboutUsVideo");
+        if (videoInLoadedSection) {
+          videoInLoadedSection.classList.add("active");
+          videoInLoadedSection.play().catch((error) => {
+            console.warn(
+              "Vídeo não pode ser reproduzido automaticamente:",
+              error
+            );
+          });
+        }
+      });
+});
