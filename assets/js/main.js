@@ -4,11 +4,13 @@ import { initCarousel } from './carousel.js';
 import { initWhatsappLogic } from './whatsapp-animation.js'; 
 import { initVideoPlayers } from './play_video.js';
 import { initLiquidNavBar } from './liquid-navbar.js';
+import { initAnimationsController } from './animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     initCarousel();
     initWhatsappLogic();
     initVideoPlayers();
+    initAnimationsController();
     initLiquidNavBar();
 
   

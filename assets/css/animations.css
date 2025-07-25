@@ -1,0 +1,312 @@
+/* assets/css/animations.css */
+
+/* ========== CONFIGURAÇÕES BASE ========== */
+.animate-element {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* ========== ANIMAÇÕES PRINCIPAIS ========== */
+
+/* Fade In Up - Para títulos e elementos principais */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-up.animate-active {
+  opacity: 1;
+  transform: translateY(0) !important;
+}
+
+/* Slide In Left - Para elementos vindos da esquerda */
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-left.animate-active {
+  opacity: 1;
+  transform: translateX(0) !important;
+}
+
+/* Slide In Right - Para elementos vindos da direita */
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-right.animate-active {
+  opacity: 1;
+  transform: translateX(0) !important;
+}
+
+/* Slide In Title - Para títulos especiais */
+.slide-in-title {
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.slide-in-title.animate-active {
+  opacity: 1;
+  transform: translateY(0) !important;
+}
+
+/* ========== NOVAS ANIMAÇÕES PARA LANDING PAGE ========== */
+
+/* Scale In - Para cards e elementos importantes */
+.scale-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.scale-in.animate-active {
+  opacity: 1;
+  transform: scale(1) !important;
+}
+
+/* Fade In - Fade simples */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.fade-in.animate-active {
+  opacity: 1 !important;
+}
+
+/* Zoom In Up - Combinação de zoom e movimento */
+.zoom-in-up {
+  opacity: 0;
+  transform: translateY(20px) scale(0.9);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.zoom-in-up.animate-active {
+  opacity: 1;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Slide In Bottom - Para elementos vindos de baixo */
+.slide-in-bottom {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-in-bottom.animate-active {
+  opacity: 1;
+  transform: translateY(0) !important;
+}
+
+/* Flip In X - Efeito de rotação no eixo X */
+.flip-in-x {
+  opacity: 0;
+  transform: perspective(1000px) rotateX(-90deg);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.flip-in-x.animate-active {
+  opacity: 1;
+  transform: perspective(1000px) rotateX(0deg) !important;
+}
+
+/* Bounce In - Efeito de bounce */
+.bounce-in {
+  opacity: 0;
+  transform: scale(0.3);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bounce-in.animate-active {
+  opacity: 1;
+  transform: scale(1) !important;
+}
+
+/* Slide Rotate - Slide com rotação sutil */
+.slide-rotate {
+  opacity: 0;
+  transform: translateY(30px) rotate(5deg);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.slide-rotate.animate-active {
+  opacity: 1;
+  transform: translateY(0) rotate(0deg) !important;
+}
+
+/* ========== ANIMAÇÕES SEQUENCIAIS ========== */
+
+/* Para criar efeito cascata */
+.animate-element:nth-child(1) { transition-delay: 0.1s; }
+.animate-element:nth-child(2) { transition-delay: 0.2s; }
+.animate-element:nth-child(3) { transition-delay: 0.3s; }
+.animate-element:nth-child(4) { transition-delay: 0.4s; }
+.animate-element:nth-child(5) { transition-delay: 0.5s; }
+.animate-element:nth-child(6) { transition-delay: 0.6s; }
+.animate-element:nth-child(7) { transition-delay: 0.7s; }
+.animate-element:nth-child(8) { transition-delay: 0.8s; }
+
+/* Para cards em grid */
+.projects-cards-grid .card:nth-child(1) { transition-delay: 0.1s; }
+.projects-cards-grid .card:nth-child(2) { transition-delay: 0.2s; }
+.projects-cards-grid .card:nth-child(3) { transition-delay: 0.3s; }
+.projects-cards-grid .card:nth-child(4) { transition-delay: 0.4s; }
+.projects-cards-grid .card:nth-child(5) { transition-delay: 0.5s; }
+.projects-cards-grid .card:nth-child(6) { transition-delay: 0.6s; }
+.projects-cards-grid .card:nth-child(7) { transition-delay: 0.7s; }
+.projects-cards-grid .card:nth-child(8) { transition-delay: 0.8s; }
+
+/* Para features */
+.feature-item:nth-child(1) { transition-delay: 0.1s; }
+.feature-item:nth-child(2) { transition-delay: 0.2s; }
+.feature-item:nth-child(3) { transition-delay: 0.3s; }
+.feature-item:nth-child(4) { transition-delay: 0.4s; }
+
+/* ========== ANIMAÇÕES ESPECIAIS PARA ELEMENTOS ESPECÍFICOS ========== */
+
+/* Hero Content */
+.hero-content h1 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+  transition-delay: 0.3s;
+}
+
+.hero-content p {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  transition-delay: 0.6s;
+}
+
+.hero-content h1.animate-active,
+.hero-content p.animate-active {
+  opacity: 1;
+  transform: translateY(0) !important;
+}
+
+/* Logo animado */
+.logo-animated {
+  opacity: 0;
+  transform: translateY(-20px) scale(0.9);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.logo-animated.animate-active {
+  opacity: 1;
+  transform: translateY(0) scale(1) !important;
+}
+
+/* Testimoniais */
+.testimonial-item {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.testimonial-item:nth-child(even) {
+  transform: translateX(30px);
+}
+
+.testimonial-item.animate-active {
+  opacity: 1;
+  transform: translateX(0) !important;
+}
+
+/* ========== ANIMAÇÕES DE HOVER APRIMORADAS ========== */
+
+/* Cards com hover suave */
+.card-hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Botões animados */
+.btn-animated {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.btn-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-animated:hover::before {
+  left: 100%;
+}
+
+.btn-animated:hover {
+  transform: translateY(-2px);
+}
+
+/* ========== ANIMAÇÕES RESPONSIVAS ========== */
+@media (max-width: 768px) {
+  .animate-element,
+  .fade-in-up,
+  .slide-in-left,
+  .slide-in-right,
+  .slide-in-title,
+  .scale-in,
+  .zoom-in-up,
+  .slide-in-bottom {
+    transition-duration: 0.6s;
+  }
+  
+  /* Reduz os delays em mobile */
+  .animate-element:nth-child(n) { transition-delay: 0.05s; }
+  .projects-cards-grid .card:nth-child(n) { transition-delay: 0.05s; }
+  .feature-item:nth-child(n) { transition-delay: 0.05s; }
+}
+
+/* ========== PREVENÇÃO DE OVERFLOW ========== */
+.animate-container {
+  overflow: hidden;
+}
+
+/* ========== ANIMAÇÕES DE CARREGAMENTO ========== */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.loading-pulse {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ========== UTILITÁRIOS ========== */
+.no-animation {
+  transition: none !important;
+  animation: none !important;
+}
+
+.animation-paused {
+  animation-play-state: paused !important;
+}
+
+.animate-fast {
+  transition-duration: 0.4s !important;
+}
+
+.animate-slow {
+  transition-duration: 1.2s !important;
+}
