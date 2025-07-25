@@ -47,6 +47,15 @@
     margin-bottom: 8px;
 }
 
+.footer-col a {
+    color: var(--light-text-color);
+    transition: color var(--transition-speed) ease;
+}
+
+.footer-col a:hover {
+    color: var(--accent-color);
+}
+
 .footer-col ul li a {
     color: var(--light-text-color);
     transition: color var(--transition-speed) ease;
@@ -63,45 +72,40 @@
 .social-icons a {
     display: inline-block;
     margin-right: var(--spacing-sm);
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color var(--transition-speed) ease;
-}
-
-.social-icons a:hover {
-    background-color: var(--accent-color);
+    width: 50px;
+    height: 50px;    
+    justify-content: left;
+    align-items: left;    
 }
 
 .social-icons img {
-    width: 20px;
-    height: 20px;
-    filter: invert(1);
+    width: 32px;
+    height: 32px;    
 }
 
 .footer-bottom {
-    background-color: #999999; /* Cor de fundo solicitada */
-    padding: var(--spacing-sm) 0;
+    background-color: --primary-color;
+    padding: var(--spacing-sm);
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Manter borda se desejar */
-    color: #333333; /* Cor do texto padrão para esta seção */
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-bottom p {
-    color: #333333; /* Garante que o texto dentro do parágrafo seja dessa cor */
+    color: var(--light-text-color);
 }
 
 .footer-bottom a {
-    color: #333333; /* Garante que os links também sejam dessa cor */
-    /* Mantenha outros estilos de link, como text-decoration ou hover, se houver */
-    text-decoration: none; /* Exemplo: remover sublinhado */
+    color: var(--light-text-color);
+    text-decoration: none;
 }
 
-/* Opcional: Para o link "Leonardo Sabino" ficar um pouco diferente, se quiser */
 .footer-bottom a:hover {
-    color: var(--accent-color); /* Exemplo: muda para a cor de destaque ao passar o mouse */
+    color: var(--accent-color);
+}
+
+.footer-col .logo-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    margin-bottom: var(--spacing-sm);
 }
