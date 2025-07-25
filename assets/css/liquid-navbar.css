@@ -168,6 +168,13 @@ body.dark-theme {
   --navbar-bg-opacity: 0.18;
   backdrop-filter: blur(16px) saturate(calc(var(--glass-saturation) * 1.2)) brightness(115%);
   -webkit-backdrop-filter: blur(16px) saturate(calc(var(--glass-saturation) * 1.2)) brightness(115%);
+  border-radius: 50% ease;
+  margin: 8px 8px 0 8px;
+  width: calc(100% - 16px);
+  transition: 
+    background-color 400ms cubic-bezier(0.4, 0.0, 0.2, 1),
+    box-shadow 400ms cubic-bezier(0.4, 0.0, 0.2, 1),
+    backdrop-filter 300ms ease;
 }
 
 /* Micro-animação para o carregamento inicial */
@@ -197,3 +204,4 @@ body.dark-theme {
   .main-header {
     background-color: color-mix(in srgb, var(--glass-dark) var(--navbar-bg-opacity), transparent);
   }
+}
