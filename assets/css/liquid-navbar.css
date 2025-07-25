@@ -195,3 +195,9 @@ body.dark-theme {
 .main-header {
   animation: liquidGlassAppear 600ms ease-out;
 }
+
+.main-header.navbar-dark {
+  --navbar-bg-opacity: 0.30; /* ou maior, conforme necessário */
+  backdrop-filter: blur(16px) saturate(calc(var(--glass-saturation) * 1.4)) brightness(100%);
+  -webkit-backdrop-filter: blur(16px) saturate(calc(var(--glass-saturation) * 1.4)) brightness(100%);
+}
