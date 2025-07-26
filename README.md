@@ -39,6 +39,7 @@
 
 ### 📂 Estrutura do Projeto
 
+```
 📦 PROJETT MÓVEIS
 ├── 📁 assets
 │ ├── 📁 css
@@ -53,6 +54,7 @@
 ├── 📘 README.md
 ├── 🎨 style.css
 └── 📄 terms-of-use.html
+```
 
 ### 🌈 Recursos Exclusivos
 
