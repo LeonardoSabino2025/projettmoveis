@@ -30,32 +30,41 @@
 }
 ```
 
-### Como Executar
+## 🚀 Experimente ao vivo!
 
-## Clone o repositório:
+[![Acessar Site](https://img.shields.io/badge/ACESSAR_SITE_PROJETT-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://leonardosabino2025.github.io/projettmoveis/)
 
-bash
-git clone https://github.com/seu-usuario/projett-moveis.git
-Inicie o servidor:
-
-bash
-cd projett-moveis && npx serve
-Acesse:
-http://localhost:3000
+**Link direto:**  
+🔗 [leonardosabino2025.github.io/projettmoveis](https://leonardosabino2025.github.io/projettmoveis/)
 
 ### 📂 Estrutura do Projeto
 
-text
-.
-├── assets/
-│ ├── css/ # Estilos modularizados
-│ ├── js/ # Lógica principal
-│ ├── imgs/ # Assets otimizados
-│ └── videos/ # Vídeos dos projetos
-├── legal/ # Documentos legais
-│ ├── termos.md
-│ └── privacidade.md
-└── index.html # Página principal
+📦 projeto/
+├── 📂 assets/
+│ ├── 📂 css/ # Estilos CSS modularizados
+│ │ ├── base.css # Reset e variáveis globais
+│ │ ├── components.css # Botões, cards e elementos UI
+│ │ └── layout.css # Grids e estruturas de página
+│ │
+│ ├── 📂 js/ # Scripts JavaScript
+│ │ ├── main.js # Lógica principal
+│ │ ├── animations.js # Controle de animações
+│ │ └── carousel.js # Lógica do carrossel
+│ │
+│ ├── 📂 imgs/ # Assets visuais otimizados
+│ │ ├── projetos/ # Imagens dos projetos
+│ │ ├── icons/ # Ícones SVG e PNG
+│ │ └── logos/ # Logotipos em múltiplos formatos
+│ │
+│ └── 📂 videos/ # Conteúdo multimídia
+│ ├── projetos/ # Vídeos dos trabalhos
+│ └── depoimentos/ # Testemunhos de clientes
+│
+├── 📂 legal/ # Documentação legal
+│ ├── termos.md # Termos de Uso em Markdown
+│ └── privacidade.md # Política de Privacidade
+│
+└── 🌐 index.html # Página inicial do projeto
 
 ### 🌈 Recursos Exclusivos
 
@@ -71,17 +80,17 @@ Adaptação para mobile
 
 ## 20 projetos em destaque
 
-### Navegação por thumbnails
+## Navegação por thumbnails
 
 ## Transições suaves
 
 ## 📱 WhatsApp Smart
 
-Botão flutuante animado
+### Botão flutuante animado
 
-Aparece somente após hero section
+## Aparece somente após hero section
 
-Desaparece próximo ao footer
+## Desaparece próximo ao footer
 
 📊 SEO & Acessibilidade
 ✅ Schema Markup para negócio local
@@ -94,9 +103,9 @@ Desaparece próximo ao footer
 
 ## MIT License - Ver detalhes
 
-Desenvolvido por Leonardo Sabino
+Desenvolvido por [![Leonardo Sabino](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/leonardo-sabino/)
 
-## 📞 [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5584921483009)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5584921483009)
 
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/leonardocsabino/)
 
