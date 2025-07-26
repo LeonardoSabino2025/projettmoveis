@@ -82,12 +82,14 @@ Adaptação para mobile
 
 ## Desaparece próximo ao footer
 
+```
 📊 SEO & Acessibilidade
 ✅ Schema Markup para negócio local
 ✅ Meta tags para redes sociais
 ✅ Navegação por teclado
 ✅ Contraste WCAG AA
 ✅ Imagens com alt text
+```
 
 ### 📜 Licença
 
