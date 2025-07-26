@@ -39,32 +39,20 @@
 
 ### 📂 Estrutura do Projeto
 
-📦 projeto/
-├── 📂 assets/
-│ ├── 📂 css/ # Estilos CSS modularizados
-│ │ ├── base.css # Reset e variáveis globais
-│ │ ├── components.css # Botões, cards e elementos UI
-│ │ └── layout.css # Grids e estruturas de página
-│ │
-│ ├── 📂 js/ # Scripts JavaScript
-│ │ ├── main.js # Lógica principal
-│ │ ├── animations.js # Controle de animações
-│ │ └── carousel.js # Lógica do carrossel
-│ │
-│ ├── 📂 imgs/ # Assets visuais otimizados
-│ │ ├── projetos/ # Imagens dos projetos
-│ │ ├── icons/ # Ícones SVG e PNG
-│ │ └── logos/ # Logotipos em múltiplos formatos
-│ │
-│ └── 📂 videos/ # Conteúdo multimídia
-│ ├── projetos/ # Vídeos dos trabalhos
-│ └── depoimentos/ # Testemunhos de clientes
-│
-├── 📂 legal/ # Documentação legal
-│ ├── termos.md # Termos de Uso em Markdown
-│ └── privacidade.md # Política de Privacidade
-│
-└── 🌐 index.html # Página inicial do projeto
+📦 PROJETT MÓVEIS
+├── 📁 assets
+│ ├── 📁 css
+│ ├── 📁 imgs
+│ ├── 📁 js
+│ └── 📁 videos
+├── 📁 midia
+├── 📄 about-us-section.html
+├── 📄 index.html
+├── 📜 LICENSE
+├── 📄 privacy-policy.html
+├── 📘 README.md
+├── 🎨 style.css
+└── 📄 terms-of-use.html
 
 ### 🌈 Recursos Exclusivos
 
