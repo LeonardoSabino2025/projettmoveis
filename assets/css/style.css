@@ -1,0 +1,13 @@
+/* style.css - Arquivo CSS Principal */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+@import url('assets/css/base.css');
+@import url('assets/css/header.css');
+@import url('assets/css/hero-carousel.css');
+@import url('assets/css/sections.css');
+@import url('assets/css/footer.css');
+@import url('assets/css/responsive.css');
+@import url('assets/css/liquid-navbar.css');
+@import url('assets/css/videos.css');
+@import url('assets/css/animations.css');
+@import url('assets/css/preloader.css');

@@ -267,6 +267,9 @@
         display: block;
         margin: 0 auto var(--spacing-md);
     }
+    .legal-document-section {
+        padding-top: 80px;
+    }
 }
 
  

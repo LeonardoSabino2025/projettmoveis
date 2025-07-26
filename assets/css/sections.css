@@ -313,3 +313,8 @@
     font-size: 1rem;    
     margin-bottom: var(--spacing-md);    
 }
+
+.legal-document-section {
+    padding-top: 100px;
+    min-height: calc(100vh - 100px);
+}
